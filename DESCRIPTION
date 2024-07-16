@@ -1,11 +1,13 @@
 Package: DataCleaner
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Tools for Data Cleaning and Preprocessing
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: person("Aiman", "Al Kafahje", email = "A.Alkafahje@campus.lmu.de", role = c("aut", "cre"))
+Maintainer: The package maintainer <A.Alkafahje@campus.lmu.de>
+Description: A package that provides functions for handling missing values, normalizing numeric data, and encoding categorical variables.
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    dplyr
+RoxygenNote: 7.3.1
