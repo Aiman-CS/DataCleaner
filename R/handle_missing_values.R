@@ -26,9 +26,17 @@ handle_missing_values <- function(df, method = "mean") {
 
   if (method == "remove") {
     return(na.omit(df))
-  } else if (method %in% c("mean", "median", "mode")) {
+  } else if (method %in% c("mean", "median")) {
     df <- df %>%
-      mutate(across(everything(), ~ ifelse(is.na(.), get(method)(., na.rm = TRUE), .)))
+      mutate(across(everything(), ~ ifelse(is.na(.), match.fun(method)(., na.rm = TRUE), .)))
+    return(df)
+  } else if (method == "mode") {
+    mode_function <- function(x) {
+      ux <- unique(x)
+      ux[which.max(tabulate(match(x, ux)))]
+    }
+    df <- df %>%
+      mutate(across(everything(), ~ ifelse(is.na(.), mode_function(.), .)))
     return(df)
   } else {
     stop("method must be 'remove', 'mean', 'median', or 'mode'")
