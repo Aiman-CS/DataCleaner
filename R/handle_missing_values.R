@@ -7,7 +7,17 @@
 #' @examples
 #' library(dplyr)
 #' df <- data.frame(a = c(1, 2, NA, 4), b = c(NA, 2, 3, 4))
+#' # Remove rows with missing values
+#' handle_missing_values(df, method = "remove")
+#'
+#' # Impute missing values with mean
 #' handle_missing_values(df, method = "mean")
+#'
+#' # Impute missing values with median
+#' handle_missing_values(df, method = "median")
+#'
+#' # Impute missing values with mode
+#' handle_missing_values(df, method = "mode")
 #' @export
 handle_missing_values <- function(df, method = "mean") {
   if (!is.data.frame(df)) {

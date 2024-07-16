@@ -1,7 +1,7 @@
 Package: DataCleaner
 Type: Package
 Title: Tools for Data Cleaning and Preprocessing
-Version: 0.1.0
+Version: 0.1.1
 Author: person("Aiman", "Al Kafahje", email = "A.Alkafahje@campus.lmu.de", role = c("aut", "cre"))
 Maintainer: The package maintainer <A.Alkafahje@campus.lmu.de>
 Description: A package that provides functions for handling missing values, normalizing numeric data, and encoding categorical variables.
